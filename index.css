@@ -1,0 +1,26 @@
+*{
+    margin: 15px;
+}
+html{
+    background-color: bisque;
+}
+h2{
+    background-color: darkturquoise;
+}
+#dp{
+    height: 200px;
+    border-radius: 50%;
+    border: solid;
+    border-color: darkturquoise;
+    border-width: 10px;
+
+}
+button{
+    border: solid;
+    border-color: aqua;
+    border-radius: 30%;
+    height: 40px;
+}
+button:hover{
+    background-color: darkturquoise;
+}

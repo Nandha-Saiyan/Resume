@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./practice.css">
+</head>
+<body>
+    <center>
+        <h1>Student Details</h1>
+        <form>
+            <table border="3px">
+                <tr>
+                    <td>Name</td><td><input id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Age</td><td><input id="age" type="number"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input name="gen" type="radio" value="Male" id="gender">Male
+                        <input name="gen" value="Female" type="radio" id="gender">Female</td>
+                </tr>
+                <tr>
+                    <td>Course</td><td><select  id="course">
+                                                <option name="cou">-</option>
+                                                <option value="Java" name="cou">Java</option>
+                                                <option name="cou" value="Python">Python</option>
+                                        </select></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td><td><input id="mail" type="email"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="update(event)" id="save" style="width: 100%;">Save</button></td>
+                </tr>
+            </table>
+        </form><br/>
+        <h1>Student Database</h1>
+        <table border="3px" style="padding: 4px;" id="result">
+            <tr>
+                <td>NAME</td>
+                <td>AGE</td>
+                <td>GENDER</td>
+                <td>COURSE</td>
+                <td>E-MAIL</td>
+                <td>ACTION</td>
+            </tr>
+        </table>
+
+    </center>
+</body>
+</html>
+
+<script>
+    var udata=document.getElementById("result")
+
+    var names=document.getElementById("name")
+    var ages=document.getElementById("age")
+    var gens=document.getElementById("gender")
+    var courses=document.getElementById("course")
+    var mails=document.getElementById("mail")
+    
+    function update(){
+        var arr=[names.value,ages.value,gens.value,courses.value,mails.value]
+        event.preventDefault()
+        var tarow=document.createElement("tr")
+        for(count=0;count<=5;count=count+1){
+            if(count!=5){
+            var tadat=document.createElement("td")
+            tadat.textContent=arr[count]}
+            else{
+                tadat=document.createElement("td")
+                tadat.innerHTML="<button id='tar' style='width : 100%;' onclick='del(event)'>Delete</button>"
+            }
+            tarow.append(tadat)
+        }
+
+        udata.append(tarow)
+    }
+    function del(event){
+        event.target.parentElement.parentElement.remove()
+    }
+</script>

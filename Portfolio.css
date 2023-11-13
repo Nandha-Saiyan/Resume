@@ -1,0 +1,18 @@
+*{
+    margin: 15px;
+}
+img{
+    height: 250px;
+    width: 400px;
+    border: solid;
+    border-color: aqua;
+    display: inline-block;
+}
+button{
+    display: block;
+    height: 60px;
+    width: 150px;
+    text-align: center;
+    background-color: aqua;
+    border-radius: 50%;
+}
